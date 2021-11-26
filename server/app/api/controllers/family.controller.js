@@ -84,7 +84,7 @@ const updateAnimal= async(req,res,next)=>{
             return res.json({
                 status: 200,
                 message: HTTPSTATUSCODE[200],
-                data: { family: `${family.family} actualizado` }
+                data: { family: `${family.id} actualizado` }
             })
     }catch(err){
         return next(err)

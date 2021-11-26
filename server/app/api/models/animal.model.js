@@ -5,7 +5,7 @@ const AnimalSchema = new Schema({
     id:{type:Number, required:true, unique:true},
     name: { type: String, required: true },
     isCarnivore:{ type: Boolean },
-    familiy:{ type: Schema.Types.ObjectId, ref: "family"}
+    family:{ type: Schema.Types.ObjectId, ref: "family"}
 });
 
 const Animal = mongoose.model("animal", AnimalSchema);

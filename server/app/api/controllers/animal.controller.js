@@ -7,7 +7,7 @@ const createAnimal= async (req, res, next) => {
         newAnimal.id= req.body.id;
         newAnimal.name= req.body.name;
         newAnimal.isCarnivore= req.body.isCarnivore;
-        newAnimal.familiy= req.body.familiy;
+        newAnimal.family= req.body.family;
         const AnimalDb= await newAnimal.save();
         return res.json({
             status: 201,
@@ -80,7 +80,7 @@ const deleteAnimal=async (req,res,next)=>{
 const updateAnimal= async(req,res,next)=>{
     try{
         const {id}=req.body;
-        const animal=await Animal.findOneAndUpdate({id:id},{id:id,name:req.body.name, isCarnivore:req.body.isCarnivore, familiy:req.body.familiy})
+        const animal=await Animal.findOneAndUpdate({id:id},{id:id,name:req.body.name, isCarnivore:req.body.isCarnivore, family:req.body.family})
             return res.json({
                 status: 200,
                 message: HTTPSTATUSCODE[200],

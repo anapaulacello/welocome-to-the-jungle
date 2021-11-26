@@ -8,5 +8,5 @@ router.get("/allAnimal",getAllAnimal);
 router.get("/:animalId",getAnimalById);
 router.get("/name/:animalName",getAnimalByName);
 router.delete("/delete",deleteAnimal)
-router.put("./update",updateAnimal)
+router.put("/update",updateAnimal)
 module.exports = router;

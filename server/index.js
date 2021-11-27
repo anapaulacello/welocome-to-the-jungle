@@ -34,10 +34,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(logger("dev"));
 
-app.use("/user", user);
 app.use("/animal", animal);
 app.use("/family", family);
 app.use("/habitat", habitat);
+app.use("/user", user);
 
 app.use((req, res, next) => {
     let err = new Error();

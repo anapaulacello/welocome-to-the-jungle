@@ -8,6 +8,7 @@ const HTTPSTATUSCODE = require("./utils/httpStatusCode");
 const animal=require("./app/api/routes/animal.routes");
 const family=require("./app/api/routes/family.routes");
 const habitat=require("./app/api/routes/habitat.routes");
+const user=require("./app/api/routes/user.routes")
 
 connect();
 
@@ -23,17 +24,17 @@ app.use((req, res, next) => {
     next();
 });
 
-/* app.use(cors({
-    origin: ['http://localhost:4200','http://localhost:3000'],
+ app.use(cors({
+    origin: ['http://localhost:3000','http://localhost:3001'],
     credentials: true,
-})); */
+})); 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(logger("dev"));
 
-
+app.use("/user", user);
 app.use("/animal", animal);
 app.use("/family", family);
 app.use("/habitat", habitat);

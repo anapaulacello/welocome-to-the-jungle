@@ -73,7 +73,7 @@ const deleteHabitat=async (req,res,next)=>{
     }
 }
 
-const updateAnimal= async(req,res,next)=>{
+const updateHabitat= async(req,res,next)=>{
     try{
         const {id}=req.body;
         const habitat=await Habitat.findOneAndUpdate({id:id},{id:id,name:req.body.name, location:req.body.location, mode:req.body.mode})
@@ -86,4 +86,4 @@ const updateAnimal= async(req,res,next)=>{
         return next(err)
     }
 }
-module.exports = { createHabitat,getAllHabitats,getHabitatById,getHabitatByName,deleteHabitat,updateAnimal};
+module.exports = { createHabitat,getAllHabitats,getHabitatById,getHabitatByName,deleteHabitat,updateHabitat};

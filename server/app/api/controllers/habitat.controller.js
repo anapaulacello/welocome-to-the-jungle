@@ -35,7 +35,7 @@ const getAllHabitats = async (req, res, next) => {
 const getHabitatById = async (req, res, next) => {
     try {
         const {habitatlId} = req.params;
-        const habitatlById = await Habitat.find({id:habitatlId});
+        const habitatlById = await Habitat.find({_id:habitatlId});
         return res.json({
             status: 200,
             message: HTTPSTATUSCODE[200],

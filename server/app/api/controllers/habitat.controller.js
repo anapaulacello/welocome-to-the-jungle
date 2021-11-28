@@ -34,12 +34,12 @@ const getAllHabitats = async (req, res, next) => {
 
 const getHabitatById = async (req, res, next) => {
     try {
-        const {habitatlId} = req.params;
-        const habitatlById = await Habitat.find({_id:habitatlId});
+        const {habitatId} = req.params;
+        const habitatById = await Habitat.find({_id:habitatId});
         return res.json({
             status: 200,
             message: HTTPSTATUSCODE[200],
-            data: { habitat: habitatlById }
+            data: { habitat: habitatById }
         })
     } catch (error) {
         return next(error)

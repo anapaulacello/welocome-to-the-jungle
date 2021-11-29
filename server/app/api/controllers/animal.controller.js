@@ -38,7 +38,7 @@ const getAllAnimal = async (req, res, next) => {
 const getAnimalById = async (req, res, next) => {
     try {
         const { animalId} = req.params;
-        const animalById = await Animal.find({id:animalId})
+        const animalById = await Animal.find({id:animalId}).populate({path:"family",populate:{path:"habitat"}})
         return res.json({
             status: 200,
             message: HTTPSTATUSCODE[200],

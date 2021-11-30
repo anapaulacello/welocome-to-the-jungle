@@ -23,10 +23,10 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
-/*    app.use(cors({
-    origin: '*',
+   app.use(cors({
+    origin: ['http://localhost:3000','http://localhost:3001','http://localhost:4200','https://welcome-to-the-jungle-react-front.vercel.app'],
     credentials: true,
-}));  */
+})); 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
